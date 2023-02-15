@@ -1,0 +1,21 @@
+enable: true 
+accesslog: true
+
+api:
+  dashboard: true
+  insecure: true
+
+log:
+    level: DEBUG
+    filePath: "./traefik.log"
+
+provider:
+    file:
+        filename: dynamic.yaml
+        watch: true
+
+
+entryPoints:
+    http:
+        address: :8000
+
