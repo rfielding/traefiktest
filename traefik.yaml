@@ -1,6 +1,10 @@
 enable: true 
 accesslog: true
 
+metrics:
+  prometheus:
+    addRoutersLabels: true
+
 api:
   dashboard: true
   insecure: true
@@ -9,11 +13,10 @@ log:
     level: DEBUG
     filePath: "./traefik.log"
 
-provider:
+providers:
     file:
-        filename: dynamic.yaml
+        filename: "./dynamic.yaml"
         watch: true
-
 
 entryPoints:
     http:

@@ -1,13 +1,13 @@
-services:
-    lb@app:
-        loadBalancer:
-            servers:
-                - url: 'http://localhost:1111/'
-                - url: 'http://localhost:2222/'
-                - url: 'http://localhost:3333/'
 
 http:
+    services:
+        app1:
+            loadBalancer:
+                servers:
+                    - url: 'http://localhost:1111/'
+                    - url: 'http://localhost:2222/'
+                    - url: 'http://localhost:3333/'
     routers:
-        lb@app:
-            rule: Path("/lbapp")
-            service: lb@app
+        app1:
+            rule: Host(`localhost`) && Path(`/app1`)
+            service: app1
