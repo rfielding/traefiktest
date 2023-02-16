@@ -1,9 +1,25 @@
+#tcp:
+#    routers:
+#        dbSocket1:
+#            middlewares:
+#                admissioncontrol
+#    middlewares:
+#        admissioncontrol:
+#            inflightconn:
+#                amount: 10000 
+
 http:
+    middlewares:
+      my-auth:
+        basicAuth:
+          removeHeader: true
+          headerField: "X-WebAuth-User"
     services:
         app2:
             loadBalancer:
                 servers:
                     - url: 'http://localhost:2222'
+                    - url: 'http://localhost:4444'
         app1:
             loadBalancer:
                 servers:

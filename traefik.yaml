@@ -1,6 +1,7 @@
 enable: true 
 accesslog: true
 
+
 metrics:
   prometheus:
     addRoutersLabels: true
@@ -21,4 +22,5 @@ providers:
 entryPoints:
     http:
         address: :8000
-
+    db:
+        address: :3306

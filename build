@@ -1,0 +1,3 @@
+#!/bin/bash
+
+go run main.go -bind 0.0.0.0:1111 & go run main.go -bind 0.0.0.0:2222 & go run main.go -bind 0.0.0.0:3333 & go run main.go -bind 0.0.0.0:4444 & traefik
