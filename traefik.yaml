@@ -1,6 +1,8 @@
 enable: true 
 accesslog: true
 
+ping:
+  entryPoint: http
 
 metrics:
   prometheus:
@@ -16,7 +18,7 @@ log:
 
 providers:
     file:
-        filename: "./dynamic.yaml"
+        filename: "./dynamic-actual.yaml"
         watch: true
 
 entryPoints:

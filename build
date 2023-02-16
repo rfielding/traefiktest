@@ -1,3 +1,11 @@
 #!/bin/bash
 
-go run main.go -bind 0.0.0.0:1111 & go run main.go -bind 0.0.0.0:2222 & go run main.go -bind 0.0.0.0:3333 & go run main.go -bind 0.0.0.0:4444 & traefik
+# Run the reconciler that moves towards the state
+# specified by dynamic.yaml
+cp dynamic.yaml dynamic-actual.yaml
+go run reconcile.go & \
+  go run service.go -bind 0.0.0.0:1111 & \
+  go run service.go -bind 0.0.0.0:2222 & \
+  go run service.go -bind 0.0.0.0:3333 & \
+  go run service.go -bind 0.0.0.0:4444 & \
+  traefik
