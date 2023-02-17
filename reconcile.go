@@ -28,7 +28,7 @@ func isUrlOk(pingUrl string) bool {
 	// We assume that the services have a GET /ping to determine rr policy
 	res, err := http.Get(pingUrl)
 	if err != nil {
-		panic("unable to create ping url")
+		return false
 	}
 	if err != nil {
 		fmt.Printf("Ping url failed: %s %v", pingUrl, err)

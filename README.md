@@ -40,3 +40,5 @@ Then browser urls
 - The Admin UI: http://localhost:8080
 - Server 1 http://localhost:8000/app1
 - Server 2 http://localhost:8000/app2
+
+The services on port 1111,3333 and 2222,4444 are going up and down constantly. When all are down, we have an outage. The reconcile.go program keeps rewriting the cluster members to keep up with what actually exists.

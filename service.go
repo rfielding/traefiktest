@@ -60,9 +60,9 @@ func main() {
 		// Sit in a loop randomly changing state from up to down
 		isUp := false
 		for {
-			if isUp && rnd.Intn(10) < 1 {
+			if isUp && rnd.Intn(20) < 1 {
 				isUp = !isUp
-			} else if !isUp && rnd.Intn(10) < 7 {
+			} else if !isUp && rnd.Intn(20) < 10 {
 				isUp = !isUp
 			}
 
