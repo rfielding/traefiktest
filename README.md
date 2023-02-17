@@ -14,6 +14,8 @@ But it is possible to run it in a completely standalone manner. The `traefik` bi
 Simple Test
 ==========
 
+> Assuming that `traefik` binary is in your path, and a Go compiler is installed.
+
 We want a pair of load-balanced services at http://localhost:8000
 
 - `/app1` proxies back to 
